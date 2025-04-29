@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  *{
+    background-color: rgb(16, 87, 159);
+  }
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  background-color: rgb(16, 87, 159);
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: #f1f1f1e4;
+  text-align: center;
+  padding: 10px;
+  font-size: 30px;
+}
+
+.item1 {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  height: 100px;
+  width: 200px;
+  border-radius: 10px;
+
+}
+
+.item2 {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  height: 100px;
+  width: 995px;
+  border-radius: 10px;
+  margin-left: 230px;
+}
+.item3 {
+  grid-column-start: 2;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 5;
+  height: 400px;
+  width: 200px;
+  border-radius: 10px;
+}
+.item4 {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  height: 100px;
+  width: 1225px;
+  border-radius: 10px;
+}
+.item5 {
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  height: 400px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+</style>
+
+</head>
+<body>
+ 
+<div class="grid-container">
+  <div class="item1">1</div>
+  <div class="item2">2</div>
+  <div class="item3">3</div> 
+  <div class="item4">4</div>
+  <div class="item5">5</div>
+</div>
+
+</body>
+</html>
+
+
