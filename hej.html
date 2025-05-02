@@ -3,14 +3,13 @@
 <head>
 <style>
   * {
-    background-color: rgb(16, 87, 159);
+    background-color: rgb(37, 116, 161);
   }
 
 .grid-container {
   display: grid;
-  grid-template-columns: 200px 1fr 200px;
+  grid-template-columns: 200px 2fr 200px;
   gap: 10px;
-  background-color: rgb(16, 87, 159);
   padding: 10px;
 }
 
@@ -19,50 +18,51 @@
   text-align: center;
   padding: 10px;
   font-size: 30px;
-
-  /* Center content inside each item */
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
 }
 
 .item1 {
   grid-column: 1 / 2;
   height: 100px;
-  border-radius: 10px;
-  
 }
-.logo {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-
 
 .item2 {
   grid-column: 2 / 4;
   height: 100px;
-  border-radius: 10px;
 }
 
 .item3 {
   grid-column: 1 / 2;
   height: 400px;
-  border-radius: 10px;
   padding: 0;
 }
 
 .item5 {
-  grid-column: 2 / 3;
+  grid-column: 2 / 4;
   height: 400px;
-  border-radius: 10px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  background-color: #e74c3c;
+}
+
+.item5 > div {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  border-radius: 8px;
 }
 
 .item4 {
   grid-column: 1 / 4;
   height: 100px;
-  border-radius: 10px;
 }
 
 .nav-menu {
@@ -89,32 +89,64 @@
 .nav-menu a:hover {
   background-color: #ddd;
 }
+
+.logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+header, footer {
+  text-align: center;
+  padding: 15px;
+  background-color: 37, 116, 161;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+main > h1 {
+  text-align: center;
+  color: white;
+  font-size: 36px;
+  margin: 20px 0;
+}
 </style>
 </head>
 <body>
 
-<div class="grid-container">
+<header>
+  <nav>
+    <ul>
+    </ul>
+  </nav>
+</header>
 
-  <div class="item1">
-    <img src="15cl.jpg" alt="Logo" class="logo">
+<main>
+  <h1>¯\_(ツ)_/¯</h1>
+
+  <div class="grid-container">
+    <div class="item1">
+      <img src="15cl.jpg" alt="Logo" class="logo">
+    </div>
+    <div class="item2">2</div>
+    <div class="item3">
+      <nav class="nav-menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Products</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+    <div class="item5">
+    
+    </div>
+    <div class="item4">4</div>
   </div>
+</main>
 
-  <div class="item2">2</div>
-
-  <div class="item3">
-    <nav class="nav-menu">
-      <a href="#">Menu 1</a>
-      <a href="#">Menu 2</a>
-      <a href="#">Menu 3</a>
-      <a href="#">Menu 4</a>
-    </nav>
-  </div>
-
-  <div class="item5">5</div>
-
-  <div class="item4">4</div>
-
-</div>
+<footer>
+  <p>©2025 fan vet jag. Inga rättigheter finns här. </p>
+</footer>
 
 </body>
 </html>
