@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <style>
   * {
-    background-color: rgb(37, 116, 161);
+    background-color: rgb(255, 255, 255);
   }
 
-.grid-container {
+  .grid-container {
   display: grid;
   grid-template-columns: 200px 2fr 200px;
   gap: 10px;
   padding: 10px;
-}
+  }
 
-.grid-container > div {
-  background-color: #f1f1f1e4;
+  .grid-container > div {
+  background-color:  rgb(226, 226, 226);
   text-align: center;
   padding: 10px;
   font-size: 30px;
@@ -22,59 +23,65 @@
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-}
+  }
 
-.item1 {
+  .item1 {
   grid-column: 1 / 2;
   height: 100px;
-}
+  
+  }
 
-.item2 {
+  .item2 {
   grid-column: 2 / 4;
   height: 100px;
+  background-color: transparent !important;
 }
 
-.item3 {
+  .item3 {
   grid-column: 1 / 2;
   height: 400px;
   padding: 0;
-}
+  }
 
-.item5 {
+
+  .item5 {
   grid-column: 2 / 4;
-  height: 400px;
+  min-height: 400px;
+  height: auto; 
   padding: 10px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 10px;
-  background-color: #e74c3c;
-}
+  }
 
-.item5 > div {
-  background-color: #ffffff;
+  .item5 > div {
+  background-color:  rgb(226, 226, 226);
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 20px;
   border-radius: 8px;
-}
+  }
 
-.item4 {
+  .item4 {
   grid-column: 1 / 4;
   height: 100px;
-}
+  }
 
-.nav-menu {
+  .nav-menu {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   height: 100%;
   width: 100%;
-}
+  background-color: rgb(226, 226, 226);
+  border-radius: 10px;
+  padding: 10px; 
+  }
 
-.nav-menu a {
+  .nav-menu a {
   text-decoration: none;
   color: black;
   font-size: 20px;
@@ -84,69 +91,154 @@
   width: 80%;
   text-align: center;
   transition: background-color 0.3s;
-}
+  }
 
-.nav-menu a:hover {
+  .nav-menu a:hover {
   background-color: #ddd;
-}
+  }
 
-.logo {
+  .logo {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-}
+  }
 
-header, footer {
+  header, footer {
   text-align: center;
   padding: 15px;
   background-color: 37, 116, 161;
   font-size: 18px;
-  color: #ffffff;
-}
+  color: #000000;
+  }
 
-main > h1 {
+  main > h1 {
   text-align: center;
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 36px;
   margin: 20px 0;
+  }
+  body {
+  margin: 0;
+  padding-bottom: 100px;
+  font-family: 'Montserrat', sans-serif;
 }
+
 </style>
 </head>
+
 <body>
 
-<header>
-  <nav>
-    <ul>
-    </ul>
-  </nav>
-</header>
-
 <main>
-  <h1>¯\_(ツ)_/¯</h1>
-
   <div class="grid-container">
     <div class="item1">
-      <img src="15cl.jpg" alt="Logo" class="logo">
+      <div style="background-color: 10px; display: inline-block;">
+        <img src="realmadrid.png" alt="Real Madrid Logo" style="height:120px;">
+      </div>
+      
     </div>
-    <div class="item2">2</div>
-    <div class="item3">
+    <div class="item2">
+      <h1 style="
+        margin: 0;
+        font-size: 36px;
+        color: blue;
+        font-family: 'Montserrat', sans-serif;
+      ">
+        Everything Real Madrid
+      </h1>
+    </div>
+    
+    
+    <div class="item3" style="background-color: transparent;">
+
       <nav class="nav-menu">
         <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Products</a>
-        <a href="#">Contact</a>
+        <a href="#" id="aboutBtn">About</a>
+        <a href="#">History</a>
+        <a href="#" id="playersBtn">Players</a>
+
       </nav>
     </div>
-    <div class="item5">
-    
+    <div class="item5" id="playerGrid">
     </div>
-    <div class="item4">4</div>
+    <div class="item4"></div>
   </div>
+  <div id="player-list" style="display: none; padding: 20px; background-color: white; border-radius: 10px; margin-top: 20px;">
+    <h2 style="text-align:center; color: rgb(37, 116, 161);">Real Madrid Legends</h2>
+    <ul id="players" style="list-style-type: none; padding: 0; font-size: 18px; text-align: center;"></ul>
+  </div>
+  
 </main>
 
 <footer>
-  <p>©2025 fan vet jag. Inga rättigheter finns här. </p>
+  <p>©2025 ¡Hala Madrid!, y nada más. </p>
 </footer>
+<script>
+  let playersLoaded = false;
 
+  const playersBtn = document.getElementById("playersBtn");
+  const playerGrid = document.getElementById("playerGrid");
+
+  playersBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  playerGrid.style.display = "grid";
+
+  if (playersLoaded) {
+    // Just show the grid and return
+    return;
+  }
+
+  playerGrid.innerHTML = "";
+
+  fetch('real_madrid_players.json')
+    .then(res => res.json())
+    .then(players => {
+      players.forEach(player => {
+        const card = document.createElement("div");
+        card.innerHTML = `
+          <div style="text-align:center;">
+            <img src="${player.image}" alt="${player.name}" style="width:100px; height:100px; border-radius:50%; object-fit:cover;"><br>
+            <strong>${player.name}</strong><br>
+            <small>${player.position}</small><br>
+            <small>${player.years}</small>
+          </div>
+        `;
+        playerGrid.appendChild(card);
+      });
+
+      playersLoaded = true;
+    })
+    .catch(err => {
+      playerGrid.innerHTML = "<div>Error loading players.</div>";
+      console.error(err);
+    });
+});
+
+  const aboutBtn = document.getElementById("aboutBtn");
+
+  aboutBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  playerGrid.style.display = "grid";
+  playerGrid.innerHTML = "";
+  playersLoaded = false;
+
+  const aboutText = document.createElement("div");
+  aboutText.style.gridColumn = "1 / -1";
+  aboutText.innerHTML = `
+    <div style="text-align:center; font-size: 20px; color: black;">
+      <h2 style="color: blue;">Real Madrid</h2>
+      <p>
+        Real Madrid Club de Fútbol is one of the most successful football clubs in the world.
+        Founded in 1902, they have won a record 15 UEFA Champions League titles and 35 La Liga titles.
+        The team is known for it's iconic white kit and legendary players like Alfredo Di Stéfano, Raúl, and Cristiano Ronaldo.
+      </p>
+      <p>¡Hala Madrid y nada más!</p>
+    </div>
+  `;
+  playerGrid.appendChild(aboutText);
+});
+
+
+</script>
 </body>
 </html>

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Iker Casillas",
+    "position": "Goalkeeper",
+    "years": "1999–2015",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Iker-Casillas-SportsTrade-2021-cropped.jpg/250px-Iker-Casillas-SportsTrade-2021-cropped.jpg"
+  },
+  {
+    "name": "Cristiano Ronaldo",
+    "position": "Forward",
+    "years": "2009–2018",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg/250px-Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg"
+  },
+  {
+    "name": "Luka Modrić",
+    "position": "Midfielder",
+    "years": "2012–present",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Luka_Modric_Interview_2021_%28cropped%29.jpg/250px-Luka_Modric_Interview_2021_%28cropped%29.jpg"
+  }
+]
