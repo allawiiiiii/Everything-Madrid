@@ -1,20 +1,20 @@
 [
   {
-    "name": "Iker Casillas",
-    "position": "Goalkeeper",
-    "years": "1999–2015",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Iker-Casillas-SportsTrade-2021-cropped.jpg/250px-Iker-Casillas-SportsTrade-2021-cropped.jpg"
+    "name": "Zinedine Zidane",
+    "position": "Midfielder",
+    "years": "2001–2006",
+    "image": "https://d3nfwcxd527z59.cloudfront.net/content/uploads/2024/02/27094439/Real-Madrid-Zinedine-Zidane.jpg"
   },
   {
     "name": "Cristiano Ronaldo",
     "position": "Forward",
     "years": "2009–2018",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg/250px-Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg"
+    "image": "https://i.pinimg.com/736x/74/99/91/7499914dbdac3da9c039062e31dc26f8.jpg"
   },
   {
     "name": "Luka Modrić",
     "position": "Midfielder",
     "years": "2012–present",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Luka_Modric_Interview_2021_%28cropped%29.jpg/250px-Luka_Modric_Interview_2021_%28cropped%29.jpg"
+    "image": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/6591/live/16022710-4435-11ef-9637-e9ed735f645f.jpg"
   }
 ]

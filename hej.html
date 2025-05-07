@@ -3,9 +3,10 @@
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   <style>
-  * {
-    background-color: rgb(255, 255, 255);
+  body {
+  background-color: rgb(255, 255, 255);
   }
+
 
   .grid-container {
   display: grid;
@@ -28,8 +29,9 @@
   .item1 {
   grid-column: 1 / 2;
   height: 100px;
-  
-  }
+  background-color: transparent !important;
+}
+
 
   .item2 {
   grid-column: 2 / 4;
@@ -56,7 +58,7 @@
   }
 
   .item5 > div {
-  background-color:  rgb(226, 226, 226);
+  background-color:  rgb(255, 255, 255);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,10 +66,17 @@
   border-radius: 8px;
   }
 
-  .item4 {
-  grid-column: 1 / 4;
-  height: 100px;
-  }
+  .player-card {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgb(255, 255, 255);
+}
 
   .nav-menu {
   display: flex;
@@ -103,13 +112,28 @@
   object-fit: contain;
   }
 
-  header, footer {
+  header {
+  background-color: #245ab6;
+  color: white;
   text-align: center;
   padding: 15px;
-  background-color: 37, 116, 161;
   font-size: 18px;
-  color: #000000;
-  }
+}
+
+footer {
+  background-color: rgb(226, 226, 226);
+  color: black;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+footer * {
+  background-color: transparent !important;
+  color: inherit;
+}
+
+
 
   main > h1 {
   text-align: center;
@@ -151,17 +175,16 @@
     <div class="item3" style="background-color: transparent;">
 
       <nav class="nav-menu">
-        <a href="#">Home</a>
+        <a href="#" id="homeBtn">Home</a>
         <a href="#" id="aboutBtn">About</a>
-        <a href="#">History</a>
+        <a href="#" id="historybtn">History</a>
         <a href="#" id="playersBtn">Players</a>
 
       </nav>
     </div>
     <div class="item5" id="playerGrid">
     </div>
-    <div class="item4"></div>
-  </div>
+      
   <div id="player-list" style="display: none; padding: 20px; background-color: white; border-radius: 10px; margin-top: 20px;">
     <h2 style="text-align:center; color: rgb(37, 116, 161);">Real Madrid Legends</h2>
     <ul id="players" style="list-style-type: none; padding: 0; font-size: 18px; text-align: center;"></ul>
@@ -169,9 +192,19 @@
   
 </main>
 
+<div style="height: 20px;"></div>
+
 <footer>
-  <p>©2025 ¡Hala Madrid!, y nada más. </p>
+  <p>
+    <img src="realmadrid.png" alt="Real Madrid Logo" style="height: 30px; vertical-align: middle;">
+    ©2025 Everything Real Madrid | ¡Hala Madrid y nada más!
+  </p>
+  <p>
+    Follow our journey on
+    <a href="https://www.instagram.com/realmadrid/" target="_blank">Instagram 📸</a>
+  </p>
 </footer>
+
 <script>
   let playersLoaded = false;
 
@@ -184,7 +217,6 @@
   playerGrid.style.display = "grid";
 
   if (playersLoaded) {
-    // Just show the grid and return
     return;
   }
 
@@ -195,13 +227,16 @@
     .then(players => {
       players.forEach(player => {
         const card = document.createElement("div");
+        card.classList.add("player-card");
+
         card.innerHTML = `
-          <div style="text-align:center;">
+          <div 
+          style="text-align:center;">
             <img src="${player.image}" alt="${player.name}" style="width:100px; height:100px; border-radius:50%; object-fit:cover;"><br>
             <strong>${player.name}</strong><br>
             <small>${player.position}</small><br>
             <small>${player.years}</small>
-          </div>
+        <div>
         `;
         playerGrid.appendChild(card);
       });
@@ -228,14 +263,44 @@
     <div style="text-align:center; font-size: 20px; color: black;">
       <h2 style="color: blue;">Real Madrid</h2>
       <p>
-        Real Madrid Club de Fútbol is one of the most successful football clubs in the world.
+        Real Madrid is the most successful football clubs in the world.
         Founded in 1902, they have won a record 15 UEFA Champions League titles and 35 La Liga titles.
-        The team is known for it's iconic white kit and legendary players like Alfredo Di Stéfano, Raúl, and Cristiano Ronaldo.
+        The team is known for it's iconic white kit and legendary players like Alfredo Di Stéfano, Raúl, and Cristiano Ronaldo amd many more.
+        The club's home ground is the Santiago Bernabéu Stadium, located in Madrid, Spain.
       </p>
-      <p>¡Hala Madrid y nada más!</p>
     </div>
   `;
   playerGrid.appendChild(aboutText);
+});
+
+
+const homeBtn = document.getElementById("homeBtn");
+
+homeBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  playerGrid.style.display = "grid";
+  playerGrid.innerHTML = "";
+  playersLoaded = false;
+
+  const homeContent = document.createElement("section");
+  homeContent.style.gridColumn = "1 / -1";
+  homeContent.style.textAlign = "center";
+  homeContent.innerHTML = `
+    <h2 style="font-size: 28px;">Welcome to the greatest football club in the world!</h2>
+    <p style="font-size: 18px;">
+      Discover the history, the legends, and the glory of Real Madrid C.F.<br>
+      From Santiago Bernabéu to the 15 Champions League titles — it's all here.
+    </p>
+    <img src="https://publish-p47754-e237306.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--dea2b738-aa79-4de3-9e72-5082e6514695/_330636543248.app.webp?preferwebp=true" alt="Bernabéu Stadium" style="width: 1500px; border-radius: 10px; margin-top: 10px;">
+  `;
+
+  playerGrid.appendChild(homeContent);
+});
+
+//Laddar sidan direkt till hemsidan
+window.addEventListener("DOMContentLoaded", () => {
+  homeBtn.click();
 });
 
 
