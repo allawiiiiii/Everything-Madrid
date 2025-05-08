@@ -4,6 +4,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   <style>
+  
+  .searchbar {
+  background-color: transparent !important;
+  text-align: center;
+  margin-top: 10px;
+}
 
   /* Body inställningar */
   body {
@@ -209,6 +215,14 @@ footer * {
   }
 }
 
+.searchbar {
+  background-color: transparent !important;
+  text-align: center;
+  margin: 15px 0;
+  grid-column: 1 / -1;
+}
+
+
 
 </style>
 </head>
@@ -216,6 +230,11 @@ footer * {
 <body>
 
 <main> 
+
+  
+  
+
+
   <div class="grid-container">
     <div class="item1">
       <div style="background-color: 10px; display: inline-block;">
@@ -239,12 +258,20 @@ footer * {
 
       </nav>
     </div>
-    <div id="searchContainer" style="display:none; text-align:center; margin-bottom: 20px;">
-      <input type="text" id="searchInput" placeholder="Search players..." style="padding:10px; width: 60%; font-size: 16px; border-radius: 5px;">
-    </div>
     
-    <div class="item5" id="playerGrid">
+    <div class="searchbar" id="searchContainer" style="display: none;">
+      <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Search players..." 
+          style="padding: 8px 12px; width: 250px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; background-color: white;">
     </div>
+
+
+  <div class="item5" id="playerGrid">
+  
+  </div>
+
       
   <div id="player-list" style="display: none; padding: 20px; background-color: white; border-radius: 10px; margin-top: 20px;">
     <h2 style="text-align:center; color: rgb(37, 116, 161);">Real Madrid Legends</h2>
@@ -260,6 +287,7 @@ footer * {
     <img src="realmadrid.png" alt="Real Madrid Logo" style="height: 30px; vertical-align: middle;">
     ©2025 Everything Madrid | ¡Hala Madrid y nada más!
   </p>
+
   <p>
     Follow our journey on
     <a href="https://www.instagram.com/realmadrid/" target="_blank">Instagram 📸</a>
