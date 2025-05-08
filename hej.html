@@ -239,6 +239,10 @@ footer * {
 
       </nav>
     </div>
+    <div id="searchContainer" style="display:none; text-align:center; margin-bottom: 20px;">
+      <input type="text" id="searchInput" placeholder="Search players..." style="padding:10px; width: 60%; font-size: 16px; border-radius: 5px;">
+    </div>
+    
     <div class="item5" id="playerGrid">
     </div>
       
@@ -265,23 +269,27 @@ footer * {
 <script>
   // Håller reda på om spelarna redan har laddats in
   let playersLoaded = false;
-  // Hämta players knappen och spelarkorten
+  // Hämta players knappen och spelarkorten(dom-manipulering)
   const playersBtn = document.getElementById("playersBtn");
   const playerGrid = document.getElementById("playerGrid");
   
   /* Hämta spelarkorten och lägg till eventlyssnare
     När knappen trycks på, hämta spelarna från JSON-filen och visa dem i griden
     Om spelarna redan har laddats, gör inget */
-  playersBtn.addEventListener("click", (e) => {
+    playersBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
   playerGrid.style.display = "grid";
+  document.getElementById("searchContainer").style.display = "block";
 
   if (playersLoaded) {
     return;
   }
-
+//Rensar sidan varje gång en annan knapp trycks.
   playerGrid.innerHTML = "";
+
+  
+  
 
 
   // Hämta spelarna från JSON-filen och skapa kort för varje spelare
@@ -304,6 +312,14 @@ footer * {
         `;
         playerGrid.appendChild(card);
       });
+      document.getElementById("searchInput").addEventListener("input", function () {
+      const query = this.value.toLowerCase();
+      const cards = document.querySelectorAll(".player-card");
+      cards.forEach(card => {
+      const name = card.querySelector("strong").textContent.toLowerCase();
+      card.style.display = name.includes(query) ? "flex" : "none";
+      });
+  });
 
       playersLoaded = true;
     })
@@ -318,6 +334,7 @@ footer * {
 
   aboutBtn.addEventListener("click", (e) => {
   e.preventDefault();
+  document.getElementById("searchContainer").style.display = "none";
   playerGrid.style.display = "grid";
   playerGrid.innerHTML = "";
   playersLoaded = false;
@@ -343,11 +360,10 @@ const homeBtn = document.getElementById("homeBtn");
 
 homeBtn.addEventListener("click", (e) => {
   e.preventDefault();
-
+  document.getElementById("searchContainer").style.display = "none";
   playerGrid.style.display = "grid";
   playerGrid.innerHTML = "";
   playersLoaded = false;
-
   const homeContent = document.createElement("section");
   homeContent.style.gridColumn = "1 / -1";
   homeContent.style.textAlign = "center";

@@ -16,5 +16,59 @@
     "position": "Midfielder",
     "years": "2012–present",
     "image": "https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/6591/live/16022710-4435-11ef-9637-e9ed735f645f.jpg"
+  },
+  {
+    "name": "Raúl González",
+    "position": "Forward",
+    "years": "1994–2010",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Raul_Gonzalez_10mar2007.jpg/640px-Raul_Gonzalez_10mar2007.jpg"
+  },
+  {
+    "name": "Iker Casillas",
+    "position": "Goalkeeper",
+    "years": "1999–2015",
+    "image": "https://cdn.vox-cdn.com/thumbor/-3WynJJMoK2LvWfSWW8XfogVWUU=/0x226:1881x1480/1400x1400/filters:focal(0x226:1881x1480):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/46222818/GettyImages-470809634.0.jpg"
+  },
+  {
+    "name": "Roberto Carlos",
+    "position": "Defender",
+    "years": "1996–2007",
+    "image": "https://assets.goal.com/images/v3/blt519e34f9694b6c99/e82f67ef3bbd1045b45c99097b70246e10b965ad.jpg?auto=webp&format=pjpg&width=3840&quality=60"
+  },
+  {
+    "name": "Sergio Ramos",
+    "position": "Defender",
+    "years": "2005–2021",
+    "image": "https://static.independent.co.uk/2021/06/16/21/newFile.jpg"
+  },
+  {
+    "name": "Ferenc Puskás",
+    "position": "Forward",
+    "years": "1958–1966",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Puskas_%281971%29.tif/lossy-page1-1200px-Puskas_%281971%29.tif.jpg"
+  },
+  {
+    "name": "Alfredo Di Stéfano",
+    "position": "Forward",
+    "years": "1953–1964",
+    "image": "https://s.wsj.net/public/resources/images/PJ-BV752_SP_HOF_DV_20140707205842.jpg"
+  },
+  {
+    "name": "Karim Benzema",
+    "position": "Forward",
+    "years": "2009–2023",
+    "image": "https://e0.365dm.com/22/04/2048x1152/skysports-karim-benzema-real-madrid_5737783.jpg?20220413102117"
+  },
+  {
+    "name": "Jude Bellingham",
+    "position": "Midfielder",
+    "years": "2023–present",
+    "image": "https://assets.goal.com/images/v3/blt11d13fd7db904b91/Jude%20Bellingham%20Real%20Madrid%202024-25.jpg"
+  },
+  {
+    "name": "Kylian Mbappé",
+    "position": "Forward",
+    "years": "2024–present",
+    "image": "https://assets.goal.com/images/v3/blt17f24da068b4f7eb/GOAL%20-%20Blank%20WEB%20-%20Facebook%20-%202024-09-02T105754.770.png?auto=webp&format=pjpg&width=3840&quality=60"
   }
 ]
